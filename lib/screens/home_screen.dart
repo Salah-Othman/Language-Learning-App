@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:language_learning_app/model/category_model.dart';
 import 'package:language_learning_app/screens/colors_screen.dart';
-import 'package:language_learning_app/screens/family_nembers.dart';
-import 'package:language_learning_app/screens/nembers_screen.dart';
+import 'package:language_learning_app/screens/family_members.dart';
+import 'package:language_learning_app/screens/numbers_screen.dart';
 import 'package:language_learning_app/screens/phrases_screen.dart';
 import 'package:language_learning_app/widgets/category_widget.dart';
 import 'package:language_learning_app/widgets/custom_text.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+const HomeScreen({super.key});
 
-  final List<CategoryModel> category = [
-    CategoryModel(title: 'Members'),
-    CategoryModel(title: 'Family Members'),
-    CategoryModel(title: 'Colors'),
-    CategoryModel(title: 'Phrases'),
-  ];
   final String selected = '';
 
   @override
@@ -37,22 +30,22 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             CategoryWidget(
-              title: 'Nembers',
+              title: 'Numbers',
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (c) => NembersScreen()),
+                  MaterialPageRoute(builder: (c) => NumbersScreen()),
                 );
               },
             ),
             SizedBox(height: 16),
 
             CategoryWidget(
-              title: 'Family Nembers',
+              title: 'Family Members',
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (c) => FamilyNembers()),
+                  MaterialPageRoute(builder: (c) => FamilyMembers()),
                 );
               },
             ),

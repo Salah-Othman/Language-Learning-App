@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FamilyNembers extends StatelessWidget {
-  const FamilyNembers({super.key});
+class FamilyMembers extends StatelessWidget {
+  const FamilyMembers({super.key});
 
   @override
   Widget build(BuildContext context) {

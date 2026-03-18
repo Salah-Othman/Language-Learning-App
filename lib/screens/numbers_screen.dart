@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:language_learning_app/model/number_model.dart';
 import 'package:language_learning_app/widgets/custom_text.dart';
 
-class NembersScreen extends StatelessWidget {
-  NembersScreen({super.key});
+class NumbersScreen extends StatelessWidget {
+  NumbersScreen({super.key});
   final List<NumberModel> numbers = [
     NumberModel(
       img: 'assets/images/numbers/number_one.png',
