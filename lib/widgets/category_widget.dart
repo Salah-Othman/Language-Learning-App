@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:language_learning_app/widgets/custom_text.dart';
 
 class CategoryWidget extends StatelessWidget {
-  CategoryWidget({super.key, required this.title, this.onTap});
+  const CategoryWidget({super.key, required this.title, this.onTap});
   final String title;
-  void Function()? onTap;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

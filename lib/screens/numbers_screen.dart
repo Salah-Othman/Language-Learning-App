@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/model/number_model.dart';
 import 'package:language_learning_app/widgets/custom_text.dart';
@@ -9,54 +10,64 @@ class NumbersScreen extends StatelessWidget {
       img: 'assets/images/numbers/number_one.png',
       eng: 'One',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_one_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_two.png',
       eng: 'Two',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_two_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_three.png',
       eng: 'Three',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_three_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_four.png',
       eng: 'Four',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_four_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_five.png',
       eng: 'Five',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_five_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_six.png',
       eng: 'Six',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_six_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_seven.png',
       eng: 'Seven',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_seven_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_eight.png',
       eng: 'Eight',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_eight_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_nine.png',
       eng: 'Nine',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_nine_sound.mp3',
     ),
     NumberModel(
       img: 'assets/images/numbers/number_ten.png',
       eng: 'Ten',
       korein: 'inch',
+      sound: 'assets/sounds/numbers/number_ten_sound.mp3',
     ),
   ];
-
+  final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,13 +134,29 @@ class NumbersScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(width: 110),
-                        IconButton(
-                          onPressed: () {
-                            /// Play Sound
-                           
-                          },
-                          icon: Icon(Icons.play_arrow, color: Colors.white),
+                        SizedBox(width: 20),
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed: () async {
+                                /// Play Sound
+                                await player.play(AssetSource(number.sound));
+                              },
+                              icon: Icon(Icons.play_arrow, color: Colors.white),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                await player.pause();
+                              },
+                              icon: Icon(Icons.pause, color: Colors.white),
+                            ),
+                            IconButton(
+                              onPressed: () async {
+                                await player.stop();
+                              },
+                              icon: Icon(Icons.stop, color: Colors.white),
+                            ),
+                          ],
                         ),
                       ],
                     ),
